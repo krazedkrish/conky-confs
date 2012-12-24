@@ -15,8 +15,8 @@ NOTE: "Compiz" & "xcompmgr" might add the shadows to you conky windows so you mi
 You might need to download these fonts. Google them.
 
 * MarVoSym
-* PizzaDude Bullets
-* Poky https://github.com/helmuthdu/conky_colors/blob/master/fonts/conkycolors/Poky.ttf
+* [PizzaDude Bullets][http://www.dafont.com/pizzadude-bullets.font]
+* [Poky][https://github.com/helmuthdu/conky_colors/blob/master/fonts/conkycolors/Poky.ttf]
 * TSCu_Comic
 * Ubuntu
 * Ubuntu Condensed
