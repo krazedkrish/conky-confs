@@ -69,9 +69,11 @@ TEXT
 ${if_running emacs}
 emacs -nw
 ${hr 2}
+M-x describe-bindings
 repeat: C-u <times> char
 cut[C-w], copy[M-w], paste[C-y]
 switch win: C-x o
+zoom in/out: C-x, C-+, C--
 ${endif}\
 ${if_running gnome-terminal}
 Process id

@@ -11,3 +11,18 @@ hydra attack
 show masquerade
 
 performance tuning try to use only one netstat
+
+from man conky
+       tcp_portmon port_begin port_end item (index)
+              TCP port (both IPv6 and IPv4) monitor for specified local ports.
+              Port numbers must be in the range 1 to 65535. Valid items are:
+
+              count Total number of connections in the range
+              rip Remote ip address
+              rhost Remote host name
+              rport Remote port number
+              rservice Remote service name from /etc/services
+              lip Local ip address
+              lhost Local host name
+              lport Local port number
+              lservice Local service name from /etc/services
