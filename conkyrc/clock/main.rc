@@ -22,7 +22,7 @@
 
 	own_window_transparent yes
 	own_window_argb_visual yes # no for semi transpancy
-	own_window_argb_value 255
+	own_window_argb_value 128
 
 	own_window yes #required in nautilus
 	own_window_type normal
