@@ -14,15 +14,15 @@
 	text_buffer_size 256 #performance
 	update_interval 1
 	no_buffers yes #Subtract from used memory
-	imlib_cache_size 0 #Force images redraw on change.
+	# imlib_cache_size 0 #Force images redraw on change.
 
 # window manager
 	own_window_class conky
 	own_window_title archy
 
 	own_window_transparent yes
-	own_window_argb_visual no # no for semi transpancy
-	own_window_argb_value 128
+	own_window_argb_visual yes # no for semi transpancy
+	own_window_argb_value 255
 
 	own_window yes #required in nautilus
 	own_window_type normal
