@@ -75,8 +75,8 @@ cut[C-w], copy[M-w], paste[C-y]
 switch win: C-x o
 zoom in/out: C-x, C-+, C--
 ${endif}\
-${if_running gnome-terminal}
-Process id
+${if_running gnome-terminal-}
+shell - setsid
 ${hr 2}
 $$$$ Current Process ID
 $$? Exit status
