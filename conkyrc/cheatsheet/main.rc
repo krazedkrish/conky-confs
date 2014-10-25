@@ -4,10 +4,10 @@
 
 # position
 	alignment top_left
-	gap_x 15
-	gap_y 160
-	maximum_width 350
-	minimum_size 350
+	gap_x 70
+	gap_y 60
+	maximum_width 500
+#	maximum_height 800
 
 # engine
 	double_buffer yes #reduces flicker
@@ -49,7 +49,7 @@
 
 #xft?
 	use_xft yes
-	xftfont Ubuntu:size=12
+	xftfont sans:size=8
 	override_utf8_locale yes
 	xftalpha 0
 
@@ -66,15 +66,100 @@
 
 
 TEXT
-${if_running emacs}
-emacs -nw
-${hr 2}
-M-x describe-bindings
+${font Ubuntu:size=10} ${if_running emacs}M-x describe-bindings
 repeat: C-u <times> char
 cut[C-w], copy[M-w], paste[C-y]
-switch win: C-x o
-zoom in/out: C-x, C-+, C--
-${endif}\
+${color green}ZZ ${color abcdef}Write current file, if modified, and exit.
+${color green}ZQ ${color abcdef}Quit current file and exit (same as ":q!").
+${color green}Ctrl-R [count] ${color abcdef}Redo [count] changes which were undone.
+${color green}:red[o] ${color abcdef} Redo one change which was undone.
+${color green}U ${color abcdef}Undo all latest changes on one line. {Vi: while not moved off of it}
+${color green}. [count] ${color abcdef}Repeat last change, with count replaced with [count].
+${hr}
+${color green}gf ${color abcdef}Edit the file whose name is under or after the cursor. Mnemonic: "goto file".
+${color green}I ${color abcdef}Insert text before the first non-blank in the line [count] times.
+${color green}gI ${color abcdef}Insert text in column 1 [count] times.
+${hr}
+${color green}O ${color abcdef}Begin a new line above the cursor and insert text, repeat [count] times.
+${color green}X ${color abcdef}Delete [count] characters before the cursor
+${color green}d{motion} ${color abcdef} Delete text that {motion} moves over
+${color green}D ${color abcdef}Delete the characters under the cursor until the end of the line
+${hr}
+${color green}{Visual}x or {Visual}d ${color abcdef}Delete the highlighted text
+    (for {Visual} see Selecting Text).
+${color green}{Visual}CTRL-H or {Visual} ${color abcdef}When in Select mode: Delete the highlighted text
+${color green}{Visual}X or {Visual}D  ${color abcdef}Delete the highlighted lines
+${hr}
+${color green}:[range]d[elete] ${color abcdef}Delete [range] lines (default: current line)
+${color green}:[range]d[elete] {count}  ${color abcdef}Delete {count} lines, starting with [range]
+${hr}
+${color green}0 ${color abcdef}To the first character of the line (exclusive).
+${color green}^ ${color abcdef}To the first non-blank character of the line
+${color green}$ ${color abcdef}To the end of the line and [count - 1] lines downward
+${color green}g0 or g<Home> ${color abcdef}When lines wrap ('wrap on): To the first character of the screen line (exclusive).
+${hr}
+Differs from "0" when a line is wider than the screen. When lines don't wrap
+('wrap' off): To the leftmost character of the current line that is on the screen.
+Differs from "0" when the first character of the line is not on the screen.
+${hr}
+${color green}:e[dit] ${color abcdef}Edit the current file. This is useful to re-edit the current file,
+   when it has been changed outside of Vim.
+${hr}
+${color green}:e[dit] ${color abcdef} Edit the current file. 
+${color green}:e[dit]! ${color abcdef} Edit the current file always. Discard any changes to the current buffer
+   This is useful if you want to start all over again
+${hr}
+${color green}:e[dit] ${color abcdef} Edit the current file. 
+${color green}:e[dit] {file} ${color abcdef} Edit {file}
+${color green}:e[dit]! {file} ${color abcdef} Edit {file} always. Discard any changes to the current buffer
+${hr}
+${endif}
+${if_running kate} VI MODE
+${color green}ZZ ${color abcdef}Write current file, if modified, and exit.
+${color green}ZQ ${color abcdef}Quit current file and exit (same as ":q!").
+${color green}Ctrl-R [count] ${color abcdef}Redo [count] changes which were undone.
+${color green}:red[o] ${color abcdef} Redo one change which was undone.
+${color green}U ${color abcdef}Undo all latest changes on one line. {Vi: while not moved off of it}
+${color green}. [count] ${color abcdef}Repeat last change, with count replaced with [count].
+${hr}
+${color green}gf ${color abcdef}Edit the file whose name is under or after the cursor. Mnemonic: "goto file".
+${color green}I ${color abcdef}Insert text before the first non-blank in the line [count] times.
+${color green}gI ${color abcdef}Insert text in column 1 [count] times.
+${hr}
+${color green}O ${color abcdef}Begin a new line above the cursor and insert text, repeat [count] times.
+${color green}X ${color abcdef}Delete [count] characters before the cursor
+${color green}d{motion} ${color abcdef} Delete text that {motion} moves over
+${color green}D ${color abcdef}Delete the characters under the cursor until the end of the line
+${hr}
+${color green}{Visual}x or {Visual}d ${color abcdef}Delete the highlighted text
+    (for {Visual} see Selecting Text).
+${color green}{Visual}CTRL-H or {Visual} ${color abcdef}When in Select mode: Delete the highlighted text
+${color green}{Visual}X or {Visual}D  ${color abcdef}Delete the highlighted lines
+${hr}
+${color green}:[range]d[elete] ${color abcdef}Delete [range] lines (default: current line)
+${color green}:[range]d[elete] {count}  ${color abcdef}Delete {count} lines, starting with [range]
+${hr}
+${color green}0 ${color abcdef}To the first character of the line (exclusive).
+${color green}^ ${color abcdef}To the first non-blank character of the line
+${color green}$ ${color abcdef}To the end of the line and [count - 1] lines downward
+${color green}g0 or g<Home> ${color abcdef}When lines wrap ('wrap on): To the first character of the screen line (exclusive).
+${hr}
+Differs from "0" when a line is wider than the screen. When lines don't wrap
+('wrap' off): To the leftmost character of the current line that is on the screen.
+Differs from "0" when the first character of the line is not on the screen.
+${hr}
+${color green}:e[dit] ${color abcdef}Edit the current file. This is useful to re-edit the current file,
+   when it has been changed outside of Vim.
+${hr}
+${color green}:e[dit] ${color abcdef} Edit the current file. 
+${color green}:e[dit]! ${color abcdef} Edit the current file always. Discard any changes to the current buffer
+   This is useful if you want to start all over again
+${hr}
+${color green}:e[dit] ${color abcdef} Edit the current file. 
+${color green}:e[dit] {file} ${color abcdef} Edit {file}
+${color green}:e[dit]! {file} ${color abcdef} Edit {file} always. Discard any changes to the current buffer
+${hr}
+${endif}
 ${if_running gnome-terminal-}
 shell - setsid
 ${hr 2}

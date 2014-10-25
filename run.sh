@@ -1,5 +1,7 @@
 #!/bin/bash
 
+killall conky
+
 echo > /tmp/conky.elog
 _my_name=`basename $0`
 _my_path=`echo $0 | sed -e s/$_my_name//`conkyrc
