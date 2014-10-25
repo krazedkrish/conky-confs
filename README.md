@@ -1,3 +1,5 @@
+[This is a fork from Forked from https://github.com/rhoit/conky-forever]
+
 # conky-forever
 
 My Conky Setting!
